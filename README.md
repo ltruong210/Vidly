@@ -1,0 +1,2 @@
+# Vidly
+Movie Shopping App
