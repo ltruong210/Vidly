@@ -10,13 +10,13 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter movie's name")]
+        [Required]
         [StringLength(255)]
         public string Name { get; set; }
 
         public Genre Genre { get; set; }
 
-        [Required(ErrorMessage = "Please choose 1 genre")]
+        [Required]
         public byte GenreId { get; set; }
 
         public DateTime DateAdded { get; set; }
@@ -24,9 +24,11 @@ namespace Vidly.Models
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [Range(1,20,ErrorMessage = "Please enter from 1 to 20 only")]
+        [Range(1,20,ErrorMessage = "Maximum valid number is 20")]
         [Display(Name = "Number In Stock")]
         public byte NumberInStock { get; set; }
-        
+
+        public byte NumberAvailable { get; set; }
+
     }
 }
